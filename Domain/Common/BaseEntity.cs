@@ -26,7 +26,7 @@ namespace Domain.Common
         public DateTime? UpdateDate { get; set; }
 
         /// <summary>
-        /// فیلد حذف منطقی
+        /// فیلد وضعیت
         /// </summary>
         public EntityStatus Status { get; set; } = EntityStatus.Active;
 
@@ -44,6 +44,6 @@ namespace Domain.Common
         /// فیلد ردیابی نسخه برای کنترل همزمانی
         /// </summary>
         [Timestamp]
-        public byte[] RowVersion { get; set; }
+        public byte[]? RowVersion { get; set; }
     }
 }
