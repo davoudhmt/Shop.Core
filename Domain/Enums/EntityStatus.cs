@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.Enums
+{
+    public enum EntityStatus
+    {
+        /// <summary>
+        /// این مقدار نشان‌دهنده وضعیت فعال یک موجودیت است.
+        /// </summary>
+        Active = 1,
+
+        /// <summary>
+        /// این مقدار نشان‌دهنده وضعیت غیرفعال یک موجودیت است.
+        /// </summary>
+        Inactive = 2,
+
+        /// <summary>
+        /// این مقدار نشان‌دهنده وضعیت بایگانی شده یک موجودیت است.
+        /// </summary>
+        Archived = 3,
+
+        /// <summary>
+        /// این مقدار نشان‌دهنده وضعیت حذف منطقی شده یک موجودیت است.
+        /// </summary>
+        Deleted = 4
+    }
+}
