@@ -17,12 +17,12 @@ namespace Domain.Entities
         /// <summary>
         /// فیلد محصول
         /// </summary>
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         /// <summary>
         /// فیلد آدرس تصویر
         /// </summary>
-        public string ImageUrl { get; set; }
+        public required string ImageUrl { get; set; }
 
         /// <summary>
         /// فیلد مشخص می‌کند که آیا این تصویر، تصویر اصلی محصول است یا خیر
