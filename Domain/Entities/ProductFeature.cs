@@ -12,11 +12,11 @@ namespace Domain.Entities
         /// <summary>
         /// فیلد شناسه محصول
         /// </summary>
-        public long ProductID { get; set; }
+        public long CategoryId { get; set; }
 
         /// <summary>
         /// فیلد کلید ویژگی
         /// </summary>
-        public required string Key { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
 }

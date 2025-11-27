@@ -20,26 +20,6 @@ namespace Domain.Entities
         public string? Description { get; set; }
 
         /// <summary>
-        /// قیمت محصول
-        /// </summary>
-        public Decimal Price { get; set; }
-
-        /// <summary>
-        /// تعداد محصول در انبار
-        /// </summary>
-        public int Stock { get; set; }
-
-        /// <summary>
-        /// این فیلد ویژگی‌های محصول را نگهداری می‌کند
-        /// </summary>
-        public ICollection<ProductFeatureValue> FeatureValues { get; set; } = new List<ProductFeatureValue>();
-
-        /// <summary>
-        /// این فیلد تصاویر محصول را نگهداری می‌کند
-        /// </summary>
-        public ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
-
-        /// <summary>
         ///  در این فیلد شناسه دسته‌بندی محصول نگهداری می‌شود
         /// </summary>
         public long CategoryId { get; set; }
@@ -53,5 +33,15 @@ namespace Domain.Entities
         /// این فیلد کد SKU یکتای محصول را نگهداری می‌کند
         /// </summary>
         public string SKU { get; set; } = string.Empty;
+
+        /// <summary>
+        /// مجموعه ویژگی‌های مشترک محصول
+        /// </summary>
+        public ICollection<ProductFeatureValue> SharedFeatures { get; set; } = new List<ProductFeatureValue>();
+
+        /// <summary>
+        /// مجموعه واریانت‌های محصول
+        /// </summary>
+        public ICollection<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
     }
 }
