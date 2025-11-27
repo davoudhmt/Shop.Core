@@ -18,10 +18,5 @@ namespace Domain.Entities
         /// فیلد توضیحات دسته‌بندی
         /// </summary>
         public string? Description { get; set; }
-
-        /// <summary>
-        /// فیلد محصولات مرتبط با این دسته‌بندی
-        /// </summary>
-        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

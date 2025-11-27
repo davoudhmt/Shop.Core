@@ -23,10 +23,5 @@ namespace Domain.Entities
         /// فیلد آدرس تصویر برند
         /// </summary>
         public string? ImageUrl { get; set; }
-
-        /// <summary>
-        /// فیلد محصولات مرتبط با این برند
-        /// </summary>
-        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
