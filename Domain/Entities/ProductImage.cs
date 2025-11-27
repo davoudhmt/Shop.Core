@@ -15,11 +15,6 @@ namespace Domain.Entities
         public long ProductID { get; set; }
 
         /// <summary>
-        /// فیلد محصول
-        /// </summary>
-        public Product? Product { get; set; }
-
-        /// <summary>
         /// فیلد آدرس تصویر
         /// </summary>
         public required string ImageUrl { get; set; }

@@ -32,7 +32,7 @@ namespace Domain.Entities
         /// <summary>
         /// این فیلد ویژگی‌های محصول را نگهداری می‌کند
         /// </summary>
-        public ICollection<ProductFeature> Features { get; set; } = new List<ProductFeature>();
+        public ICollection<ProductFeatureValue> FeatureValues { get; set; } = new List<ProductFeatureValue>();
 
         /// <summary>
         /// این فیلد تصاویر محصول را نگهداری می‌کند
@@ -45,19 +45,9 @@ namespace Domain.Entities
         public long CategoryId { get; set; }
 
         /// <summary>
-        /// در این فیلد دسته‌بندی محصول نگهداری می‌شود
-        /// </summary>
-        public Category? Category { get; set; }
-
-        /// <summary>
         /// در این فیلد شناسه برند محصول نگهداری می‌شود
         /// </summary>
         public long? BrandId { get; set; }
-
-        /// <summary>
-        /// در این فیلد برند محصول نگهداری می‌شود
-        /// </summary>
-        public Brand? Brand { get; set; }
 
         /// <summary>
         /// این فیلد کد SKU یکتای محصول را نگهداری می‌کند
