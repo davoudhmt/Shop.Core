@@ -17,16 +17,16 @@ namespace Domain.Entities
         /// <summary>
         /// فیلد محصول
         /// </summary>
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         /// <summary>
         /// فیلد کلید ویژگی
         /// </summary>
-        public string Key { get; set; }
+        public required string Key { get; set; }
 
         /// <summary>
         /// فیلد مقدار ویژگی
         /// </summary>
-        public string Value { get; set; }
+        public required string Value { get; set; }
     }
 }

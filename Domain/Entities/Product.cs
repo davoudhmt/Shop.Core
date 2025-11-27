@@ -47,7 +47,7 @@ namespace Domain.Entities
         /// <summary>
         /// در این فیلد دسته‌بندی محصول نگهداری می‌شود
         /// </summary>
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         /// <summary>
         /// در این فیلد شناسه برند محصول نگهداری می‌شود
