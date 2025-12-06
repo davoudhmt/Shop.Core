@@ -19,13 +19,8 @@ namespace Domain.Enums
         Inactive = 2,
 
         /// <summary>
-        /// این مقدار نشان‌دهنده وضعیت بایگانی شده یک موجودیت است.
-        /// </summary>
-        Archived = 3,
-
-        /// <summary>
         /// این مقدار نشان‌دهنده وضعیت حذف منطقی شده یک موجودیت است.
         /// </summary>
-        Deleted = 4
+        Deleted = 3
     }
 }
