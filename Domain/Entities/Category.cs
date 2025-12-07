@@ -63,7 +63,7 @@ namespace Domain.Entities
             var normalizedName = name.Trim();
             var normalizeDescription = description?.Trim();
 
-            Guard.AgainstInvalidId(parentCategoryId, "شناسه دسته‌بندی والد نامعتبر است");
+            Guard.AgainstInvalidId(parentCategoryId!.Value, "شناسه دسته‌بندی والد نامعتبر است");
             Guard.AgainstNullOrWhiteSpace(normalizedName, "نام دسته‌بندی نمی‌تواند خالی باشد");
             Guard.AgainstInvalidLength(normalizedName, 2, 100, "نام دسته‌بندی باید بین 2 تا 100 کاراکتر باشد");
             Guard.AgainstMaxLength(normalizeDescription, 500, "توضیحات دسته‌بندی نمی‌تواند بیشتر از 500 کاراکتر باشد");
@@ -87,7 +87,7 @@ namespace Domain.Entities
             bool hasChanges = false;
             if (parentCategoryId is not null && parentCategoryId != ParentCategoryId)
             {
-                Guard.AgainstInvalidId(parentCategoryId, "شناسه دسته‌بندی والد نامعتبر است");
+                Guard.AgainstInvalidId(parentCategoryId.Value, "شناسه دسته‌بندی والد نامعتبر است");
                 Guard.AgainstSelfReference(Id, parentCategoryId, "دسته‌بندی نمی‌تواند والد خود باشد");
                 ParentCategoryId = parentCategoryId.Value;
                 hasChanges = true;

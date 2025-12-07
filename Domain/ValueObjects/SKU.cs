@@ -16,18 +16,20 @@ namespace Domain.ValueObjects
             if (string.IsNullOrWhiteSpace(value))
                 throw new DomainException("کد یکت نمی‌تواند خالی باشد.");
 
-            if (value.Length != 10)
+            var newValue = value.Trim();
+
+            if (newValue.Length != 10)
                 throw new DomainException("کد یکتا باید دقیقاً 10 کاراکتر باشد.");
 
-            var categoryPart = value[..3];
-            var numericPart = value[3..];
+            var categoryPart = newValue[..3];
+            var numericPart = newValue[3..];
 
             if (!categoryPart.All(char.IsLetter) || !numericPart.All(char.IsDigit))
             {
                 throw new DomainException("کد محصول باید شامل 3 حرف و 7 عدد باشد.");
             }
 
-            Value = value.Trim().ToUpper();
+            Value = newValue.ToUpperInvariant();
         }
         protected override IEnumerable<object> GetEqualityComponents()
         {

@@ -74,7 +74,7 @@ namespace Domain.Entities
             bool hasChange = false;
             if (categoryId is not null && categoryId != CategoryId)
             {
-                Guard.AgainstInvalidId(categoryId, "شناسه دسته‌بندی نامعتبر است.");
+                Guard.AgainstInvalidId(categoryId.Value, "شناسه دسته‌بندی نامعتبر است.");
                 CategoryId = categoryId.Value;
                 hasChange = true;
             }

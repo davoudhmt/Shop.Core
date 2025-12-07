@@ -29,7 +29,7 @@ namespace Domain.Entities
         /// <summary>
         /// مقدار ویژگی محصول
         /// </summary>
-        public string Value { get; private set; } = string.Empty;
+        public string Value { get; private set; } = null!;
 
         /// <summary>
         /// این متد برای استفاده توسط ORM‌ها است
@@ -116,21 +116,21 @@ namespace Domain.Entities
             }
             if (productId.HasValue && productId != ProductId)
             {
-                Guard.AgainstInvalidId(productId, "شناسه محصول نامعتبر است.");
+                Guard.AgainstInvalidId(productId.Value, "شناسه محصول نامعتبر است.");
                 ProductId = productId;
                 ProductVariantId = null;
                 hasChange = true;
             }
             if (productVariantId.HasValue && productVariantId != ProductVariantId)
             {
-                Guard.AgainstInvalidId(productVariantId, "شناسه واریانت محصول نامعتبر است.");
+                Guard.AgainstInvalidId(productVariantId.Value, "شناسه واریانت محصول نامعتبر است.");
                 ProductVariantId = productVariantId;
                 ProductId = null;
                 hasChange = true;
             }
             if (productFeatureId is not null && productFeatureId != ProductFeatureId)
             {
-                Guard.AgainstInvalidId(productFeatureId, "شناسه ویژگی محصول نامعتبر است.");
+                Guard.AgainstInvalidId(productFeatureId.Value, "شناسه ویژگی محصول نامعتبر است.");
                 ProductFeatureId = productFeatureId.Value;
                 hasChange = true;
             }

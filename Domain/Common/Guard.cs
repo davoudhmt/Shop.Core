@@ -47,9 +47,9 @@ namespace Domain.Common
         /// <param name="id"></param>
         /// <param name="message"></param>
         /// <exception cref="DomainException"></exception>
-        public static void AgainstInvalidId(long? id, string message)
+        public static void AgainstInvalidId(long id, string message)
         {
-            if (id.HasValue && id.Value <= 0)
+            if (id <= 0)
             {
                 throw new DomainException(message);
             }
