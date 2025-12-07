@@ -25,16 +25,18 @@ namespace Domain.ValueObjects
         /// <exception cref="DomainException">اگر مقدار نامعتبر باشد خطا پرتاب می‌شود</exception>
         public CategoryCode(string value)
         {
-            if (string.IsNullOrWhiteSpace(value))
+            var normalize = value.Trim();
+
+            if (string.IsNullOrWhiteSpace(normalize))
                 throw new DomainException("کد دسته‌بندی نمی‌تواند خالی باشد.");
 
-            if (value.Length != 3)
+            if (normalize.Length != 3)
                 throw new DomainException("کد دسته‌بندی باید دقیقاً ۳ کاراکتر باشد.");
 
-            if (!value.All(char.IsLetter))
+            if (!normalize.All(char.IsLetter))
                 throw new DomainException("کد دسته‌بندی باید فقط شامل حروف باشد.");
 
-            Value = value.Trim().ToUpper();
+            Value = normalize.ToUpperInvariant();
         }
 
         /// <summary>

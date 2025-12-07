@@ -86,7 +86,10 @@ namespace Domain.Entities
             Guard.AgainstNullOrWhiteSpace(normalizedDescription, "توضیحات محصول نمی‌تواند خالی باشد.");
             Guard.AgainstInvalidLength(normalizedDescription, 20, 1000, "توضیحات محصول باید بین 20 تا 1000 کاراکتر باشد.");
             Guard.AgainstInvalidId(categoryId, "شناسه دسته‌بندی محصول معتبر نمی‌باشد.");
-            Guard.AgainstInvalidId(brandId, "شناسه برند محصول معتبر نمی‌باشد.");
+            if(brandId is not null)
+            {
+                Guard.AgainstInvalidId(brandId.Value, "شناسه برند محصول معتبر نمی‌باشد.");
+            }
 
             Name = normalizedName;
             Description = normalizedDescription;
@@ -126,13 +129,13 @@ namespace Domain.Entities
             }
             if (categoryId is not null && categoryId != CategoryId)
             {
-                Guard.AgainstInvalidId(categoryId, "شناسه دسته‌بندی محصول معتبر نمی‌باشد.");
+                Guard.AgainstInvalidId(categoryId.Value, "شناسه دسته‌بندی محصول معتبر نمی‌باشد.");
                 CategoryId = categoryId.Value;
                 hasChange = true;
             }
             if (brandId is not null && brandId != BrandId)
             {
-                Guard.AgainstInvalidId(brandId, "شناسه برند محصول معتبر نمی‌باشد.");
+                Guard.AgainstInvalidId(brandId.Value, "شناسه برند محصول معتبر نمی‌باشد.");
                 BrandId = brandId.Value;
                 hasChange = true;
             }
