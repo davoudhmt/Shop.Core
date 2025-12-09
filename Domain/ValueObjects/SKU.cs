@@ -1,9 +1,4 @@
 ﻿using Domain.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.ValueObjects
 {
@@ -11,7 +6,7 @@ namespace Domain.ValueObjects
     {
         public string Value { get; }
 
-        public SKU(string value) 
+        public SKU(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new DomainException("کد یکت نمی‌تواند خالی باشد.");

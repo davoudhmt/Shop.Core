@@ -1,11 +1,6 @@
 ﻿using Domain.Common;
 using Domain.Enums;
 using Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -86,7 +81,7 @@ namespace Domain.Entities
             Guard.AgainstNullOrWhiteSpace(normalizedDescription, "توضیحات محصول نمی‌تواند خالی باشد.");
             Guard.AgainstInvalidLength(normalizedDescription, 20, 1000, "توضیحات محصول باید بین 20 تا 1000 کاراکتر باشد.");
             Guard.AgainstInvalidId(categoryId, "شناسه دسته‌بندی محصول معتبر نمی‌باشد.");
-            if(brandId is not null)
+            if (brandId is not null)
             {
                 Guard.AgainstInvalidId(brandId.Value, "شناسه برند محصول معتبر نمی‌باشد.");
             }

@@ -1,10 +1,5 @@
 ﻿using Domain.Exceptions;
 using Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopCore.DomainTests.ValueObjects
 {
@@ -17,7 +12,7 @@ namespace ShopCore.DomainTests.ValueObjects
         {
             var code = new ProductCode(input);
             Assert.Equal(expected, code.Value);
-            Assert.Equal(expected,code.ToString());
+            Assert.Equal(expected, code.ToString());
         }
 
         [Theory]

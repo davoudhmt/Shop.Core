@@ -1,10 +1,5 @@
-﻿using Domain.Exceptions;
-using Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Common;
+using Domain.Exceptions;
 
 namespace ShopCore.DomainTests.Guards
 {
@@ -24,7 +19,7 @@ namespace ShopCore.DomainTests.Guards
         {
             var input1 = 1;
             var input2 = 99999;
-            var ex1 = Record.Exception(() => Guard.AgainstInvalidId(input1,"ورودی باید عدد مثبت باشد"));
+            var ex1 = Record.Exception(() => Guard.AgainstInvalidId(input1, "ورودی باید عدد مثبت باشد"));
             Assert.Null(ex1);
             var ex2 = Record.Exception(() => Guard.AgainstInvalidId(input2, "ورودی باید عدد مثبت باشد"));
             Assert.Null(ex2);

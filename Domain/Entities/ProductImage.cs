@@ -1,11 +1,6 @@
 ﻿using Domain.Common;
 using Domain.Enums;
 using Domain.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -64,13 +59,13 @@ namespace Domain.Entities
         {
             var normalizedImgaeUrl = imageUrl.Trim();
 
-            if(!productId.HasValue && !productVariantId.HasValue)
+            if (!productId.HasValue && !productVariantId.HasValue)
             {
                 throw new DomainException("حداقل یکی از شناسه‌های محصول یا واریانت محصول باید مقداردهی شود.");
             }
-            if(productId.HasValue)
+            if (productId.HasValue)
                 Guard.AgainstInvalidId(productId.Value, "شناسه محصول نامعتبر است.");
-            if(productVariantId.HasValue)
+            if (productVariantId.HasValue)
                 Guard.AgainstInvalidId(productVariantId.Value, "شناسه واریانت محصول نامعتبر است.");
 
             Guard.AgainstNullOrWhiteSpace(normalizedImgaeUrl, "آدرس تصویر نمی‌تواند خالی باشد.");
@@ -100,7 +95,7 @@ namespace Domain.Entities
             {
                 throw new DomainException("حداقل یکی از شناسه‌های محصول یا واریانت محصول باید مقداردهی شود.");
             }
-            if(productId is not null && productId != ProductId)
+            if (productId is not null && productId != ProductId)
             {
                 Guard.AgainstInvalidId(productId.Value, "شناسه محصول نامعتبر است.");
                 ProductId = productId;
@@ -123,7 +118,7 @@ namespace Domain.Entities
                 ImageUrl = normalizedImgaeUrl;
                 hasChange = true;
             }
-            if (status is not null &&  status != Status)
+            if (status is not null && status != Status)
             {
                 ChangeStatus(status.Value);
                 hasChange = true;
