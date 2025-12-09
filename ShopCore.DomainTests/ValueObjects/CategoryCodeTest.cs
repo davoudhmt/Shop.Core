@@ -1,10 +1,5 @@
 ﻿using Domain.Exceptions;
 using Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopCore.DomainTests.ValueObjects
 {
@@ -27,7 +22,7 @@ namespace ShopCore.DomainTests.ValueObjects
         [InlineData("   ")]
         public void CreateCategoryCode_WithEmptyOrWhitespace_ShouldThrow(string input)
         {
-            Assert.Throws<DomainException>(() =>  new CategoryCode(input));
+            Assert.Throws<DomainException>(() => new CategoryCode(input));
         }
 
         [Theory]

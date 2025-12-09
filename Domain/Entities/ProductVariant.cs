@@ -85,6 +85,7 @@ namespace Domain.Entities
 
             ProductId = productId;
             Price = price;
+            DiscountPercent = discountPercent;
             Stock = stock;
             SKU = new SKU(sku);
         }

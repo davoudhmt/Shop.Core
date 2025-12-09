@@ -1,11 +1,5 @@
 ﻿using Domain.Common;
-using Domain.Enums;
 using Domain.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -66,15 +60,15 @@ namespace Domain.Entities
             {
                 throw new DomainException("فقط یکی از شناسه محصول یا شناسه واریانت محصول می‌تواند مقداردهی شود.");
             }
-            if(!productId.HasValue && !productVariantId.HasValue)
+            if (!productId.HasValue && !productVariantId.HasValue)
             {
-                throw new DomainException ("حداقل یکی از شناسه محصول یا شناسه واریانت محصول باید مقداردهی شود.");
+                throw new DomainException("حداقل یکی از شناسه محصول یا شناسه واریانت محصول باید مقداردهی شود.");
             }
-            if(productId.HasValue)
+            if (productId.HasValue)
             {
                 Guard.AgainstInvalidId(productId.Value, "شناسه محصول نامعتبر است.");
             }
-            if(productVariantId.HasValue)
+            if (productVariantId.HasValue)
             {
                 Guard.AgainstInvalidId(productVariantId.Value, "شناسه واریانت محصول نامعتبر است.");
             }
